@@ -4,6 +4,7 @@ const webpack = require("webpack");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { extendDefaultPlugins } = require("svgo");
 
 const IS_DEVELOPMENT = process.env.NODE.ENV === "dev";
@@ -51,6 +52,8 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[id].css",
     }),
+
+    new CleanWebpackPlugin(),
   ],
 
   module: {
