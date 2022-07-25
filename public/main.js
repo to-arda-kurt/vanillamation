@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("data:image/png;base64,ZXhwb3J0IGRlZmF1bHQgX193ZWJwYWNrX3B1YmxpY19wYXRoX18gKyAicGxhY2Vob2xkZXIuYTJjMjVmNzc3N2JlY2ExZWI4NmY1Njk2ZjJhNjY0YjgucG5nIjs=")})();
