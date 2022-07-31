@@ -1,12 +1,12 @@
-const { merge } = require('webpack-merge');
-const path = require('path');
+const { merge } = require("webpack-merge");
+const path = require("path");
 
-const config = require('./webpack.config');
+const config = require("./webpack.config");
 
 module.exports = merge(config, {
-  mode: 'development',
+  mode: "development",
 
-  devtool: 'inline-source-map',
+  devtool: "inline-source-map",
 
   devServer: {
     devMiddleware: {
@@ -15,6 +15,6 @@ module.exports = merge(config, {
   },
 
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, "dev"),
   },
 });

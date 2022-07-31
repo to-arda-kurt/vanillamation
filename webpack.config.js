@@ -5,6 +5,8 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+
 const { extendDefaultPlugins } = require("svgo");
 
 const IS_DEVELOPMENT = process.env.NODE.ENV === "dev";
@@ -111,6 +113,7 @@ module.exports = {
     ],
   },
   optimization: {
+    minimize: true,
     minimizer: [
       "...",
       new ImageMinimizerPlugin({
@@ -145,6 +148,9 @@ module.exports = {
             ],
           },
         },
+      }),
+      new TerserPlugin({
+        test: /\.js(\?.*)?$/i,
       }),
     ],
   },
